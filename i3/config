@@ -16,6 +16,8 @@ exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; 
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
 
 # Display fix
+exec dbus-launch --sh-syntax i3
+exec --no-startup-id dunst
 exec_always xrandr --output eDP --mode 1920x1080
 
 # Keyboard Fix
@@ -55,7 +57,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet --no-agent
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
