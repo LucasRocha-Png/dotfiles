@@ -11,28 +11,47 @@
 set $mod Mod4
 set $tab Mod1
 
-# Touchpad fix
-exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Tapping Enabled" 1'
-exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
+exec_always --no-startup-id bash -c 'killall picom; picom --daemon --config ~/.config/picom/picom.conf'
+for_window [class=".*"] border none
+
+# Wallpaper
+exec_always --no-startup-id ~/dotfiles/i3/set_wallpaper.sh &
+#bindsym $mod+o exec --no-startup-id ~/dotfiles/i3/set_wallpaper.sh
+
 
 # Display fix
 exec dbus-launch --sh-syntax i3
 exec --no-startup-id dunst
 exec_always xrandr --output eDP --mode 1920x1080
 
+# Espaços entre janelas
+gaps inner 10
+gaps outer 8
+
+bindsym $mod+plus gaps inner current plus 5
+bindsym $mod+minus gaps inner current minus 5
+bindsym $mod+Shift+plus gaps outer current plus 5
+bindsym $mod+Shift+minus gaps outer current minus 5
+
+
 # Keyboard Fix
 exec_always setxkbmap br
 
 # Apps keybinds
 bindsym $mod+b exec firefox
+bindsym $mod+p exec --no-startup-id ~/.local/share/WhatsApp/WhatsApp
+bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
+bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/
+bindsym $mod+n exec --no-startup-id firefox --new-window https://notebooklm.google.com/
 
 # Brigness fix
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Print fix
-exec --no-startup-id mkdir -p ~/Images/Screenshots
-bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Images/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png'
+exec --no-startup-id mkdir -p ~/Pictures/Screenshots
+bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png'
+
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -117,10 +136,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split h ; exec --no-startup-id sh -c 'mkdir -p ~/.cache/i3 && echo "HORIZONTAL" > ~/.cache/i3/split_mode'
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split v ; exec --no-startup-id sh -c 'mkdir -p ~/.cache/i3 && echo "VERTICAL" > ~/.cache/i3/split_mode'
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -219,3 +238,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Touchpad fix
+exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Tapping Enabled" 1'
+exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
