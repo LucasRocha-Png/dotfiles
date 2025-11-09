@@ -11,31 +11,33 @@
 set $mod Mod4
 set $tab Mod1
 
+# Configure picom
 exec_always --no-startup-id bash -c 'killall picom; picom --daemon --config ~/.config/picom/picom.conf'
 for_window [class=".*"] border none
 
-# Wallpaper
-exec_always --no-startup-id ~/dotfiles/i3/set_wallpaper.sh &
-#bindsym $mod+o exec --no-startup-id ~/dotfiles/i3/set_wallpaper.sh
-
-
-# Display fix
+# Configure some 
 exec dbus-launch --sh-syntax i3
 exec --no-startup-id dunst
 exec_always xrandr --output eDP --mode 1920x1080
+exec_always setxkbmap br abnt2
+
+# Print fix
+exec --no-startup-id mkdir -p ~/Pictures/Screenshots
+bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png'
+
+# Wallpaper
+exec_always --no-startup-id ~/dotfiles/i3/scripts/set_wallpaper.sh &
+bindsym $mod+o exec --no-startup-id ~/dotfiles/i3/scripts/set_wallpaper.sh
 
 # Espaços entre janelas
-gaps inner 10
-gaps outer 8
+gaps inner 0
+gaps outer 0
 
 bindsym $mod+plus gaps inner current plus 5
 bindsym $mod+minus gaps inner current minus 5
 bindsym $mod+Shift+plus gaps outer current plus 5
 bindsym $mod+Shift+minus gaps outer current minus 5
 
-
-# Keyboard Fix
-exec_always setxkbmap br
 
 # Apps keybinds
 bindsym $mod+b exec firefox
@@ -48,9 +50,6 @@ bindsym $mod+n exec --no-startup-id firefox --new-window https://notebooklm.goog
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
-# Print fix
-exec --no-startup-id mkdir -p ~/Pictures/Screenshots
-bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png'
 
 
 
@@ -100,7 +99,9 @@ bindsym $mod+shift+q kill
 bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+BackSpace exec --no-startup-id ~/dotfiles/i3/scripts/open_rofi.sh
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
