@@ -14,6 +14,12 @@ set $tab Mod1
 # Configure picom
 exec_always --no-startup-id bash -c 'killall picom; picom --daemon --config ~/.config/picom/picom.conf'
 for_window [class=".*"] border none
+#                       <borda>   <fundo_titlebar> <texto>   <indicador>
+client.focused          #00000077  #00000077  #ffffff  #888888
+client.focused_inactive #000000AA  #000000AA  #ffffff  #333333
+client.unfocused        #000000AA   #000000AA  #c7c7c7  #222222
+client.urgent           #E53935AA  #E53935AA         #ffffff  #E53935
+client.background       #000000
 
 # Configure some 
 exec dbus-launch --sh-syntax i3
@@ -43,8 +49,6 @@ bindsym $mod+Shift+minus gaps outer current minus 5
 bindsym $mod+b exec firefox
 bindsym $mod+p exec --no-startup-id ~/.local/share/WhatsApp/WhatsApp
 bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
-bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/
-bindsym $mod+n exec --no-startup-id firefox --new-window https://notebooklm.google.com/
 
 # Brigness fix
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -56,7 +60,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 16
-font pango:Fira Mono 16
+font pango:Hack 10
+
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
