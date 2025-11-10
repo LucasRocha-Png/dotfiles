@@ -11,21 +11,21 @@
     foreground = "#e0def4"
 
 [urgency_low]
-    background = "#001b257c"
+    background = "#001b2555"
     highlight = "#0d3342ff"
     frame_color = "#31748f"
     default_icon = "dialog-information"
     format = "<b><span foreground='#31748f'>%s</span></b>\n%b"
 
 [urgency_normal]
-    background = "#1f12007c"
+    background = "#1f120055"
     highlight = "#f6c177"
     frame_color = "#f6c177"
     default_icon = "dialog-warning"
     format = "<b><span foreground='#f6c177'>%s</span></b>\n%b"
 
 [urgency_critical]
-    background = "#30000e79"
+    background = "#30000e55"
     highlight = "#eb6f92"
     frame_color = "#eb6f92"
     default_icon = "dialog-error"

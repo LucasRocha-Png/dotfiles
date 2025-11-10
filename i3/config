@@ -30,7 +30,7 @@ exec_always --no-startup-id ~/dotfiles/i3/scripts/set_wallpaper.sh &
 bindsym $mod+o exec --no-startup-id ~/dotfiles/i3/scripts/set_wallpaper.sh
 
 # Espaços entre janelas
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 bindsym $mod+plus gaps inner current plus 5
