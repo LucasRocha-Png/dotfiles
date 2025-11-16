@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=PolicyKit Authentication Agent
+Comment=Start polkit-gnome authentication agent
+Exec=/usr/lib/polkit-gnome-authentication-agent-1
+Terminal=false
+Type=Application
+Categories=Utility;

@@ -21,7 +21,7 @@ for folder in "$DOTFILES"/*/; do
 done
 
 
-for file_name in ".bashrc" ".zshrc"; do
+for file_name in ".bashrc" ".zshrc" ".xprofile"; do
     file="$DOTFILES/$file_name"
     target="$HOME/$file_name"
 

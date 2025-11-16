@@ -72,8 +72,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+shift+q kill
 bindsym $alt+F4 kill
 
-# start dmenu (a program launcher)
-bindsym $mod+BackSpace exec --no-startup-id ~/dotfiles/i3/scripts/open_rofi.sh
+# start launcher and powermenu
+bindsym $mod+BackSpace exec --no-startup-id ~/dotfiles/i3/scripts/open_launcher.sh
+bindsym $mod+plus exec --no-startup-id ~/dotfiles/i3/scripts/open_powermenu.sh
 
 # change focus
 bindsym $mod+j focus left
@@ -182,3 +183,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Touchpad fix
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Tapping Enabled" 1'
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
+exec --no-startup-id sh -c '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
