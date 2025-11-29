@@ -8,25 +8,29 @@
     font = "Hack 14"
     enable_recursive_icon_lookup = true
     corner_radius = 2
-    foreground = "#e0def4"
+    foreground = "#fdfdfd"
 
 [urgency_low]
-    background = "#001b2555"
-    highlight = "#0d3342ff"
-    frame_color = "#31748f"
-    default_icon = "dialog-information"
-    format = "<b><span foreground='#31748f'>%s</span></b>\n%b"
-
-[urgency_normal]
-    background = "#1f120055"
+    background = "#00000077"
     highlight = "#f6c177"
     frame_color = "#f6c177"
     default_icon = "dialog-warning"
     format = "<b><span foreground='#f6c177'>%s</span></b>\n%b"
+    script = ~/dotfiles/dunst/play_notification.sh
+
+
+[urgency_normal]
+    background = "#00000077"
+    highlight = "#0d3342ff"
+    frame_color = "#fdfdfd"
+    default_icon = "dialog-information"
+    format = "<b><span foreground='#fdfdfd'>%s</span></b>\n%b"
+    script = ~/dotfiles/dunst/play_notification.sh
 
 [urgency_critical]
-    background = "#30000e55"
+    background = "#00000077"
     highlight = "#eb6f92"
     frame_color = "#eb6f92"
     default_icon = "dialog-error"
     format = "<b><span foreground='#eb6f92'>%s</span></b>\n%b"
+    script = ~/dotfiles/dunst/play_notification.sh

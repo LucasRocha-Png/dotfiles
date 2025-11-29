@@ -17,10 +17,11 @@ exec dbus-launch --sh-syntax i3
 exec --no-startup-id dunst
 exec_always xrandr --output eDP --mode 1920x1080
 exec_always setxkbmap br abnt2
-
+#exec_always --no-startup-id autotiling
+#exec_always --no-startup-id ~/dotfiles/i3/scripts/autotiling.py
 # Print fix
 exec --no-startup-id mkdir -p ~/Pictures/Screenshots
-bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png'
+bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga'
 
 # Wallpaper
 exec_always --no-startup-id ~/dotfiles/i3/scripts/set_wallpaper.sh &
@@ -31,6 +32,7 @@ gaps inner 5
 gaps outer 0
 
 # Apps keybinds
+bindsym $mod+n exec nemo
 bindsym $mod+b exec firefox
 bindsym $mod+p exec --no-startup-id ~/.local/share/WhatsApp/WhatsApp
 bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
@@ -184,3 +186,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Tapping Enabled" 1'
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
 exec --no-startup-id sh -c '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
+exec --no-startup-id sh -c 'udiskie -ans &'
