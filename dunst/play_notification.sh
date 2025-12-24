@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/paplay /usr/share/sounds/freedesktop/stereo/message-new-instant.oga &
+/usr/bin/paplay --volume=65536 /usr/share/sounds/freedesktop/stereo/message-new-instant.oga &

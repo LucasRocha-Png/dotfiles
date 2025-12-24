@@ -36,6 +36,8 @@ bindsym $mod+n exec nemo
 bindsym $mod+b exec firefox
 bindsym $mod+p exec --no-startup-id ~/.local/share/WhatsApp/WhatsApp
 bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
+bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/app
+
 
 # Brigness fix
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -187,3 +189,8 @@ exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; 
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
 exec --no-startup-id sh -c '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
 exec --no-startup-id sh -c 'udiskie -ans &'
+
+
+#for_window [class="pavucontrol"] floating enable
+#for_window [class="pavucontrol"] resize set 805 300
+#for_window [class="pavucontrol"] move position 1110 30

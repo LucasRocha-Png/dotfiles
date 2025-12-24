@@ -9,3 +9,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 [ -r /home/salieri/.config/byobu/prompt ] && . /home/salieri/.config/byobu/prompt   #byobu-prompt#
+
+export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"
+export TERMINAL=kitty

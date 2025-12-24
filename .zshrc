@@ -112,3 +112,6 @@ alias tree="exa --tree"
 
 alias calendar="gnome-calendar"
 alias calculator="qalculate-gtk"
+
+export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"
+export TERMINAL=kitty
