@@ -4,10 +4,10 @@ set $tab Mod1
 
 for_window [class=".*"] border none title_format "%title"
 #                       <borda>   <fundo_titlebar> <texto>   <indicador>
-client.focused          #000000  #00ff00 #000000   #888888
-client.focused_inactive #000000  #000000  #00ff00  #333333
-client.unfocused        #000000  #000000 #00ff00  #222222
-client.urgent           #ff0000  #ff0000         #00ff00  #ff0000
+client.focused          #000000  #19cb00 #000000   #888888
+client.focused_inactive #000000  #000000  #19cb00 #333333
+client.unfocused        #000000  #000000 #19cb00  #222222
+client.urgent           #cc0403  #cc0403       #19cb00  #cc0403
 client.background       #000000
 font pango:Terminess Nerd Font Mono 12
 
@@ -25,7 +25,7 @@ bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screens
 # Apps keybinds
 bindsym $mod+n exec nemo
 bindsym $mod+b exec firefox
-bindsym $mod+p exec --no-startup-id ~/.local/share/WhatsApp/WhatsApp
+bindsym $mod+p exec --no-startup-id zapzap
 bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
 bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/app
 

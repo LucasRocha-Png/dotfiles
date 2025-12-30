@@ -11,7 +11,15 @@ mkdir -p "$BACKUP_DIR"
 
 for folder in "$DOTFILES"/*/; do
     folder_name=$(basename "$folder")
-    target="$CONFIG_DIR/$folder_name"
+    
+    case "$folder_name" in
+        ".vscode")
+            target="$HOME/$folder_name"
+            ;;
+        *)
+            target="$CONFIG_DIR/$folder_name"
+            ;;
+    esac
 
     if [ -e "$target" ] || [ -L "$target" ]; then
         mv "$target" "$BACKUP_DIR/"

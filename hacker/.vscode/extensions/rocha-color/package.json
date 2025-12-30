@@ -1,0 +1,21 @@
+{
+  "name": "rocha-color",
+  "displayName": "rocha_color",
+  "description": "Cor Super Foda",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "lucas_rocha",
+        "uiTheme": "hc-black",
+        "path": "./themes/lucas_rocha-color-theme.json"
+      }
+    ]
+  }
+}
