@@ -28,7 +28,25 @@
     "editorWidget.background": "#000000", 
     "editorWidget.border": "#00ff00",
 
-    // Popup ao passar o mouse (Hover)
+    // ERROS
+    "editorError.foreground": "#cc0403",
+    "errorLens.errorForeground": "#cc0403",
+    "editorError.background": "#cc040333", 
+    "errorLens.errorBackground": "#f2201f33", 
+    "errorLens.errorMessageBackground": "#f2201f33", 
+    
+    "editorWarning.foreground": "#cecb00",
+    "errorLens.warningForeground": "#cecb00",
+    "editorWarning.background": "#cecb0033",
+    "errorLens.warningBackground": "#cecb0033",
+    "errorLens.warningMessageBackground": "#cecb0033", 
+
+    "editorInfo.foreground": "#14ffff",
+    "editorInfo.background": "#14ffff33",
+    
+
+
+
     "editorHoverWidget.background": "#000000",      // Fundo preto
     "editorHoverWidget.border": "#19cb00",          // Borda Verde (para destacar do fundo)
     "editorHoverWidget.foreground": "#19cb00",      // Texto geral
@@ -87,7 +105,7 @@
 
 
     "list.activeSelectionBackground": "#19cb00",
-    "list.activeSelectionForeground": "#000000",
+    "list.activeSelectionForeground": "#19cb00",
     "list.hoverBackground": "#19cb0022",
 
     // TERMINAL INTEGRADO 
@@ -213,7 +231,7 @@
     {
         "scope": "invalid",
         "settings": {
-            "foreground": "#f2201f"
+            "foreground": "#cc0403"
         }
     },
     {
@@ -548,7 +566,7 @@
     {
         "scope": "token.error-token",
         "settings": {
-            "foreground": "#f2201f"
+            "foreground": "#cc0403"
         }
     },
     {
