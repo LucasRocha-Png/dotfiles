@@ -1,0 +1,198 @@
+{
+	"name": "vsc-octave-debugger",
+	"displayName": "Octave Debugger",
+	"version": "0.5.13",
+	"publisher": "paulosilva",
+	"description": "Debug Octave and Matlab code in Visual Studio Code.",
+	"author": {
+		"name": "paulo silva",
+		"email": "paulo.fernando.silva@gmail.com"
+	},
+	"keywords": [
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"icon": "images/OctaveDebuggerIcon.png",
+	"categories": [
+		"Debuggers"
+	],
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/paulo-fernando-silva/vscOctaveDebugger.git"
+	},
+	"bugs": {
+		"url": "https://github.com/paulo-fernando-silva/vscOctaveDebugger/issues"
+	},
+	"dependencies": {
+		"vscode-debugadapter": "^1.25.0-pre.0",
+		"vscode-debugprotocol": "^1.25.0-pre.0"
+	},
+	"devDependencies": {
+		"@vscode/vsce": "^2.19.0",
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "^6.14.9",
+		"@types/vscode": "^1.17.0",
+		"@vscode/debugadapter-testsupport": "^1.58.0",
+		"@vscode/test-electron": "^2.2.0",
+		"mocha": "^10.1.0",
+		"ts-loader": "^9.4.1",
+		"tslint": "^5.20.1",
+		"typescript": "^4.2.3",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^4.7.2"
+	},
+	"scripts": {
+		"prepare": "tsc -p ./",
+		"compile": "tsc -p ./",
+		"tslint": "tslint ./src/**/*.ts",
+		"watch": "tsc -w -p ./",
+		"package": "vsce package",
+		"publish": "vsce publish",
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./"
+	},
+	"main": "./dist/extension",
+	"activationEvents": [
+		"onDebug",
+		"onCommand:extension.vsc-octave-debugger.getProgramName"
+	],
+	"contributes": {
+		"breakpoints": [
+			{
+				"language": "matlab"
+			},
+			{
+				"language": "octave"
+			}
+		],
+		"languages": [
+			{
+				"id": "octave",
+				"aliases": [
+					"Octave",
+					"OCTAVE",
+					"matlab",
+					"Matlab",
+					"MATLAB"
+				],
+				"extensions": [
+					".m"
+				]
+			}
+		],
+		"debuggers": [
+			{
+				"type": "OctaveDebugger",
+				"label": "Octave Debugger",
+				"program": "./dist/OctaveDebugger.js",
+				"runtime": "node",
+				"languages": [
+					"matlab",
+					"octave"
+				],
+				"configurationAttributes": {
+					"launch": {
+						"required": [
+							"program"
+						],
+						"properties": {
+							"program": {
+								"type": "string",
+								"description": "Function or file to execute.",
+								"default": "${command:AskForProgramName}"
+							},
+							"octave": {
+								"type": "string",
+								"description": "Path to the octave-cli executable.",
+								"default": "octave-cli"
+							},
+							"sourceFolder": {
+								"type": "string",
+								"description": "Add all source under this folder. (Optional)",
+								"default": "${workspaceFolder}"
+							},
+							"workingDirectory": {
+								"type": "string",
+								"description": "Execute program from this directory. (Optional)",
+								"default": ""
+							},
+							"verbose": {
+								"type": "boolean",
+								"description": "Turn on debug messages. (Optional)",
+								"default": false
+							},
+							"splitFieldnamesOctaveStyle": {
+								"type": "boolean",
+								"description": "Enable fieldnames containing an almost arbitrary format. (Optional)",
+								"default": false
+							},
+							"logFilename": {
+								"type": "string",
+								"description": "Output log to file. Use absolute filename. (Optional)",
+								"default": "${workspaceFolder}/log"
+							},
+							"autoTerminate": {
+								"type": "boolean",
+								"description": "Defaults to true, i.e. Octave process will be terminated after the last program line is executed. Setting this to false will allow the program to continue executing. This is useful if you're running UI elements with callbacks and you want to continue debugging after the end of the program code. (Optional)",
+								"default": true
+							},
+							"octaveArguments": {
+								"type": "array",
+								"description": "Command line arguments to be passed to the octave process. (Optional)",
+								"default": []
+							},
+							"octaveEnvironment": {
+								"type": "object",
+								"description": "Environment to be set when octave runs. Json key:value pair object, e.g. { 'FOO': 'bar' }. (Optional)",
+								"default": {}
+							},
+							"shell": {
+								"type": "boolean",
+								"description": "Run the octave process in a shell. Allows things like 'octave': 'export FOO=bar; octave-cli'. (Optional)",
+								"default": true
+							}
+						}
+					}
+				},
+				"initialConfigurations": [
+					{
+						"type": "OctaveDebugger",
+						"request": "launch",
+						"name": "Execute selected file.",
+						"program": "${file}",
+						"octave": "octave-cli",
+						"sourceFolder": "${workspaceFolder}"
+					}
+				],
+				"configurationSnippets": [
+					{
+						"label": "Octave Debugger: Launch",
+						"description": "A new configuration for launching Octave.",
+						"body": {
+							"type": "OctaveDebugger",
+							"request": "launch",
+							"name": "Execute selected file.",
+							"program": "^\"\\${file}\"",
+							"octave": "octave-cli",
+							"sourceFolder": "^\"\\${workspaceFolder}\""
+						}
+					}
+				],
+				"variables": {
+					"AskForProgramName": "extension.vsc-octave-debugger.getProgramName"
+				}
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1767120344120,
+		"targetPlatform": "undefined",
+		"size": 572762
+	}
+}

@@ -11,6 +11,10 @@ client.urgent           #cc0403  #cc0403       #19cb00  #cc0403
 client.background       #000000
 font pango:Terminess Nerd Font Mono 12
 
+for_window [class="Qalculate-gtk"] floating enable
+for_window [class="Gcolor3"] floating enable
+for_window [class="Gnome-pomodoro"] floating enable
+
 # Configure some 
 exec dbus-launch --sh-syntax i3
 exec --no-startup-id dunst
@@ -26,14 +30,13 @@ bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screens
 bindsym $mod+n exec nemo
 bindsym $mod+b exec firefox
 bindsym $mod+p exec --no-startup-id zapzap
-bindsym $mod+c exec --no-startup-id firefox --new-window https://www.chatgpt.com/
+bindsym $mod+c exec --no-startup-id qalculate-gtk
 bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/app
-
+bindsym $mod+o exec --no-startup-id gcolor3
 
 # Brigness fix
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -43,6 +46,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet --no-agent
+exec --no-startup-id gnome-pomodoro --no-default-window
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -165,7 +169,7 @@ mode "resize" {
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-        bindsym $mod+r mode "default"
+        bindsym $mod+r mode "default" 
 }
 
 bindsym $mod+r mode "resize"
@@ -175,4 +179,6 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Tapping Enabled" 1'
 exec --no-startup-id sh -c 'TP="$(xinput list --name-only | grep -i touchpad)"; xinput set-prop "$TP" "libinput Natural Scrolling Enabled" 1'
 exec --no-startup-id sh -c '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1'
-exec --no-startup-id sh -c 'udiskie -ans &'
+exec --no-startup-id sh -c 'udiskie -ans &'
+
+exec_always --no-startup-id pkill picom
