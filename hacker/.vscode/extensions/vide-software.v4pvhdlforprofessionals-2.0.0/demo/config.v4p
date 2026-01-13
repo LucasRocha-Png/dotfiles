@@ -1,0 +1,51 @@
+# GENERAL REMARKS
+# - Each root folder can have a dedicated 'config.v4p' file. Settings therein always have precedence
+# - A master config file can be located (e.g.) in the user's home folder. It can be used to define global
+#   library assignments and excludes, as well as globally invariant settings.
+
+# In the 'libraries' section you can use GLOB patterns to assign library names to files.
+# You can use a comma separated list to assign multiple library names to single files.
+[libraries]
+    math.vhd="lib_math"
+    common.vhd="lib_common"
+    user.vhd="lib_user"
+
+# In the 'excludes' section you can use GLOB patterns to exclude files from the project. 
+# Those files are not parsed at all.
+[excludes]
+    ignore.vhd=true
+
+# In the 'settings' section you can specify various settings for configuring the behavior of V4P.
+[settings]
+    # You can use the @default specifier to explicitly use V4P's default for a specific value
+    V4p.Settings.Formatting.Indentation.UseTabs = @default
+    V4p.Settings.Formatting.Indentation.TabWidth = @default
+    # You can use the @inherig specifier to inherit the setting from the MasterConfig
+    V4p.Settings.Formatting.Indentation.Vhdl.ReportSeverity = @inherit
+    V4p.Settings.Formatting.Indentation.Vhdl.WhenChoices = @inherit
+    V4p.Settings.Formatting.Indentation.Vhdl.Declarations = True
+    V4p.Settings.Formatting.Indentation.Vhdl.PortMaps = True
+    V4p.Settings.Formatting.Indentation.Vhdl.UseClauses = True
+    V4p.Settings.Formatting.Indentation.Vhdl.PortDeclarations = True
+    V4p.Settings.Formatting.Newlines.Vhdl.ProtectedKeyword = False
+    V4p.Settings.Formatting.Newlines.Vhdl.RecordKeyword = False
+    V4p.Settings.Formatting.Newlines.Vhdl.WhenStatements = True
+    V4p.Settings.Formatting.EndIdentifiers = ""
+    V4p.Settings.Formatting.Vhdl.KeywordStyle = Lower
+    V4p.Settings.Formatting.Vhdl.StandardLibraryStyle = Lower
+    V4p.Settings.Formatting.Vhdl.AutoAlignSnippets = True
+    V4p.Settings.Basics.LicenseFile = 
+    V4p.Settings.Basics.LogSeverity = Debug
+    V4p.Settings.Basics.TopLevelEntities = 
+    V4p.Settings.HoverInfo.ShowLibraries = False
+    V4p.Settings.HoverInfo.ShowLocation = False
+    V4p.Settings.HoverInfo.ResolveStdTypes = False
+    V4p.Settings.HoverInfo.ResolveTypes = True
+    V4p.Settings.HoverInfo.ShowAllOverloads = False
+    V4p.Settings.Completion.ShowKeywords = True
+    V4p.Settings.Completion.ShowUncommon = False
+    V4p.Settings.Completion.ShowEnums = True
+    V4p.Settings.StutterMode.Enabled = True
+    V4p.Settings.StutterMode.HorizontalLineWidth = 100
+    V4p.Settings.ErrorChecker.IgnoreInstanceOutputs = False
+    V4p.Settings.ErrorChecker.IgnoreInstanceInputsWithDefaultValues = False

@@ -1,0 +1,63 @@
+{
+    "v4p-basics": {
+        "prefix": "V4p-basics",
+        "body": "V4p.Settings.Basics.${1|VhdlStandard,LicenseFile,LogSeverity,TopLevelEntities|} = ${2|\"license.v4p\",\"toplevel\",0,Detail,Debug,Note,Info,Warning,Error,Fatal,Vhdl2008,Vhdl2019,@default,@inherit|}",
+        "description": "V4P config snippet for Basic Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-completion": {
+        "prefix": "V4p-completion",
+        "body": "V4p.Settings.Completion.${1|ShowKeywords,ShowUncommon,ShowEnums,ShowVendorSnippets,ShowVendorSymbols|} = ${2|True,False,@default,@inherit|}",
+        "description": "V4P config snippet for Code-Completion Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-fmt": {
+        "prefix": "V4p-fmt",
+        "body": "V4p.Settings.Formatting.${1|KeywordStyle,StandardLibraryStyle,Indentation,Newlines,EndIdentifiers,AlignSequentialAssignments|} = ${2|True,False,AsDefined,Upper,Lower,VbaStyle,@default,@inherit|}",
+        "description": "V4P config snippet for General Formatting Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-fmt-indent": {
+        "prefix": "V4p-fmt-indent",
+        "body": "V4p.Settings.Formatting.Indentation.${1|UseTabs,TabWidth,ReportSeverity,WhenChoices,Declarations,PortMaps,UseClauses,PortDeclarations|} = ${2|0,True,False,@default,@inherit|}",
+        "description": "V4P config snippet for Indentation Formatting Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-fmt-endidentifiers": {
+        "prefix": "V4p-fmt-endidentifiers", 
+        "body": "V4p.Settings.Formatting.EndIdentifiers = \"architecture, block, case, component, context, entity, function, generate, loop, package, procedure, process, protected, record\"",
+        "description": "V4P config snippet for End-identifiers Formatting Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-fmt-newlines": {
+        "prefix": "V4p-fmt-newlines",
+        "body": "V4p.Settings.Formatting.Newlines.${1|ProtectedKeyword,RecordKeyword,UnitsKeyword,WhenChoices|} = ${2|True,False,Never,Always,Keep,@default,@inherit|}",
+        "description": "V4P config snippet for Newline Formatting Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-hover": {
+        "prefix": "V4p-hover",
+        "body": "V4p.Settings.HoverInfo.${1|ShowComments,ShowLibraries,ShowLocation,ResolveStdTypes,ResolveTypes,ShowAllOverloads|} = ${2|True,False,@default,@inherit|}",
+        "description": "V4P config snippet for HoverInfo Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-error": {
+        "prefix": "v4p-error",
+        "body": "V4p.Settings.ErrorChecker.${1|MissingAssociations.IgnoreInstanceOutputs,MissingAssociations.IgnoreInstanceInputsWithDefaultValues,SymbolUnused.IgnoreLoopVariables,SymbolUnused.AttributesReadValue,SymbolUnused.IgnoreAssert,PhysicalLiteral|} = ${2|True,False,@default,@inherit,Error,Warning,Ignore,\"all\"|}",
+        "description": "V4P config snippet for ErrorChecker Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-param": {
+        "prefix": "v4p-param",
+        "body": "V4p.Settings.ParameterHelp.${1|Instances|} = ${2|True,False,@default,@inherit|}",
+        "description": "V4P config snippet for Parameter Help Settings",
+        "scope": "source.v4p"
+    },
+    "v4p-snippets": {
+        "prefix": "v4p-snippets",
+        "body": "V4p.Settings.Snippets.${1|SignalNamePrefix|} = \"s_\"",
+        "description": "V4P config snippet for Parameter Help Settings",
+        "scope": "source.v4p"
+    }
+
+}

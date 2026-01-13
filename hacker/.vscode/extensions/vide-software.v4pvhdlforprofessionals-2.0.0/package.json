@@ -1,0 +1,554 @@
+{
+	"name": "v4pvhdlforprofessionals",
+	"displayName": "VHDL for Professionals",
+	"description": "Sophisticated VHDL-2008 language support for professional engineers",
+	"author": "Markus Ferringer",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"version": "2.0.0",
+	"publisher": "ViDE-Software",
+	"repository": {},
+	"homepage": "http://www.vide-software.at",
+	"icon": "images/logo-vhdl.png",
+	"pricing": "Trial",
+	"engines": {
+		"vscode": "^1.86.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Language Packs"
+	],
+	"activationEvents": [
+		"workspaceContains:**/*.v4p",
+		"workspaceContains:**/*.vhd",
+		"workspaceContains:**/*.vho",
+		"workspaceContains:**/*.vhdl"
+	],
+	"keywords": [
+		"vhdl",
+		"hdl",
+		"vlsi",
+		"vhd",
+		"hardware description language",
+		"electronics",
+		"FPGA",
+		"ASIC",
+		"Altera",
+		"Intel",
+		"Xilinx"
+	],
+	"preview": false,
+	"main": "./dist/extension",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "vide-v4p-vhdl",
+					"title": "VHDL Information Tab (V4P)",
+					"icon": "images/sidebar.svg"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "vide-v4p-vhdl-hierarchy",
+				"contents": "Define top-level entities in the [settings] section of any config.v4p ('V4p.Settings.Basics.TopLevelEntities'). For performance reasons, this view does not update automatically. Press the refresh button to update. It is located on the top right of this pane.\n[Refresh](command:v4p.views.hierarchy.refresh)"
+			},
+			{
+				"view": "vide-v4p-vhdl-library",
+				"contents": "For performance reasons, this view does not update automatically. Press the refresh button to update. It is located on the top right of this pane.\n[Refresh](command:v4p.views.libraries.refresh)"
+			},
+			{
+				"view": "vide-v4p-vhdl-snippets",
+				"contents": "For performance reasons, this view does not update automatically. Press the refresh button to update. It is located on the top right of this pane.\n[Refresh](command:v4p.views.snippets.refresh)"
+			}
+		],
+		"views": {
+			"vide-v4p-vhdl": [
+				{
+					"id": "vide-v4p-vhdl-commands",
+					"name": "Commands",
+					"when": "v4pvhdlforprofessionals:enabled"
+				},
+				{
+					"id": "vide-v4p-vhdl-hierarchy",
+					"name": "Design Hierarchy",
+					"when": "v4pvhdlforprofessionals:enabled"
+				},
+				{
+					"id": "vide-v4p-vhdl-library",
+					"name": "Library Hierarchy",
+					"when": "v4pvhdlforprofessionals:enabled"
+				},
+				{
+					"id": "vide-v4p-vhdl-snippets",
+					"name": "Code Snippets",
+					"when": "v4pvhdlforprofessionals:enabled-no"
+				},
+				{
+					"id": "vide-v4p-vhdl-search",
+					"name": "Search Results",
+					"when": "v4pvhdlforprofessionals:search:enabled"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "vhdl",
+				"aliases": [
+					"VHDL",
+					"vhdl"
+				],
+				"extensions": [
+					".vhd",
+					".vho",
+					".vhdl"
+				],
+				"configuration": "./vhdl.configuration.json"
+			},
+			{
+				"id": "v4p",
+				"aliases": [
+					"V4P"
+				],
+				"extensions": [
+					".v4p"
+				],
+				"configuration": "./v4p.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "vhdl",
+				"scopeName": "source.v4p.vhdl",
+				"path": "./syntaxes/v4p.vhdl.tmLanguage"
+			},
+			{
+				"language": "v4p",
+				"scopeName": "source.v4p.v4p",
+				"path": "./syntaxes/v4p.v4p.tmLanguage"
+			}
+		],
+		"themes": [
+			{
+				"label": "V4P - VHDL (Visual Studio dark)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/v4p_dark.json"
+			},
+			{
+				"label": "V4P - VHDL (Visual Studio light)",
+				"uiTheme": "vs",
+				"path": "./themes/v4p.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "v4p.debug.refresh",
+				"title": "Refresh semantic token coloring",
+				"category": "V4P (Debug)"
+			},
+			{
+				"command": "v4p.version",
+				"title": "Version Info",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.masterconfig",
+				"title": "Open (or create) MasterConfig",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.localconfig",
+				"title": "Open (or create) local config.v4p for root-folder of current file",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.thirdparty",
+				"title": "Third Party Software Licensing Info",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.eula",
+				"title": "Show End User License Agreement",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.license",
+				"title": "License Info",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.license.renew",
+				"title": "License Purchase/Renewal",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.license.mac",
+				"title": "Change MAC Addresses",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.reload",
+				"title": "Reload the project, esp. the config files",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.logfile",
+				"title": "Open the logfile in the editor",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.demo",
+				"title": "Create and open a demo project",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.settings",
+				"title": "Show a detailed map of V4P's settings in the editor",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.fileinfo",
+				"title": "Show detailed information about all files in the workspace",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.export",
+				"title": "Export the design for different targets (Quartus, Questasim, etc)",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.views.libraries.refresh",
+				"title": "Refresh the library view",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "v4p.views.hierarchy.refresh",
+				"title": "Refresh the hierarchy view",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "v4p.views.hierarchy.sortByLocation",
+				"title": "Sort the item according to their location in the source file",
+				"icon": {
+					"light": "images/sortByLocation.svg",
+					"dark": "images/sortByLocationDark.svg"
+				}
+			},
+			{
+				"command": "v4p.views.hierarchy.sortByLabel",
+				"title": "Sort the item according to their instance name (label)",
+				"icon": {
+					"light": "images/sortByLabel.svg",
+					"dark": "images/sortByLabelDark.svg"
+				}
+			},
+			{
+				"command": "v4p.views.hierarchy.jumpToDefinitionOff",
+				"title": "✓ Jump to entity/architecture"
+			},
+			{
+				"command": "v4p.views.hierarchy.jumpToDefinitionOn",
+				"title": "Jump to entity/architecture"
+			},
+			{
+				"command": "v4p.views.hierarchy.sortByEntity",
+				"title": "Sort the item according to the entity/component name of the instance",
+				"icon": {
+					"light": "images/sortByEntity.svg",
+					"dark": "images/sortByEntityDark.svg"
+				}
+			},
+			{
+				"command": "v4p.views.snippets.refresh",
+				"title": "Refresh the snippets view",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "v4p.views.search.close",
+				"title": "Close the Search Results View",
+				"icon": "$(close)"
+			},
+			{
+				"command": "v4p.cheatsheet",
+				"title": "Open the CheatSheet in the browser",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.stats",
+				"title": "Code Statistics of the workspace in tabular form",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.releasenotes",
+				"title": "Open Release Notes in browser",
+				"category": "V4P"
+			},
+			{
+				"command": "v4p.findsources",
+				"title": "Find All Sources",
+				"category": "V4P"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"group": "0_navigation",
+					"command": "v4p.findsources"
+				}
+			],
+			"view/title": [
+				{
+					"command": "v4p.views.libraries.refresh",
+					"when": "view == vide-v4p-vhdl-library",
+					"group": "navigation"
+				},
+				{
+					"command": "v4p.views.hierarchy.refresh",
+					"when": "view == vide-v4p-vhdl-hierarchy",
+					"group": "navigation@0"
+				},
+				{
+					"command": "v4p.views.hierarchy.sortByLabel",
+					"when": "view == vide-v4p-vhdl-hierarchy",
+					"group": "navigation@1"
+				},
+				{
+					"command": "v4p.views.hierarchy.jumpToDefinitionOn",
+					"when": "view == vide-v4p-vhdl-hierarchy && jump-to-definition"
+				},
+				{
+					"command": "v4p.views.hierarchy.jumpToDefinitionOff",
+					"when": "view == vide-v4p-vhdl-hierarchy && !jump-to-definition"
+				},
+				{
+					"command": "v4p.views.hierarchy.sortByLocation",
+					"when": "view == vide-v4p-vhdl-hierarchy",
+					"group": "navigation@2"
+				},
+				{
+					"command": "v4p.views.hierarchy.sortByEntity",
+					"when": "view == vide-v4p-vhdl-hierarchy",
+					"group": "navigation@3"
+				},
+				{
+					"command": "v4p.views.snippets.refresh",
+					"when": "view == vide-v4p-vhdl-snippets",
+					"group": "navigation"
+				},
+				{
+					"command": "v4p.views.search.close",
+					"when": "view == vide-v4p-vhdl-search",
+					"group": "navigation"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "v4p",
+				"path": "./syntaxes/v4p.snippets.json"
+			}
+		],
+		"semanticTokenTypes": [
+			{
+				"id": "identifier",
+				"description": "identifiers without specific role"
+			},
+			{
+				"id": "type",
+				"description": "type definitions"
+			},
+			{
+				"id": "enumeration",
+				"superType": "enumMember",
+				"description": "enumeration literals. enum types is a 'type'"
+			},
+			{
+				"id": "label",
+				"description": "labels"
+			},
+			{
+				"id": "hierarchy",
+				"superType": "namespace",
+				"description": "hierarchy elements like labels, libraries, packages, etc. in selected/external path names"
+			},
+			{
+				"id": "attribute",
+				"description": "custom and predefined attributes"
+			},
+			{
+				"id": "signal",
+				"description": "symbols of type signal"
+			},
+			{
+				"id": "variable",
+				"description": "symbols of type variable"
+			},
+			{
+				"id": "generic",
+				"superType": "typeParameter",
+				"description": "generic type parameter"
+			},
+			{
+				"id": "constant",
+				"description": "symbols of type constant"
+			},
+			{
+				"id": "portsignal",
+				"superType": "parameter",
+				"description": "port signals/variables (entities, functions, procedures)"
+			},
+			{
+				"id": "portsignalin",
+				"superType": "parameter",
+				"description": "port input signals/variables (entities, functions, procedures)"
+			},
+			{
+				"id": "portsignalout",
+				"superType": "parameter",
+				"description": "port output signals/variables (entities, functions, procedures)"
+			},
+			{
+				"id": "portsignalinout",
+				"superType": "parameter",
+				"description": "port bidir signals/variables (entities, functions, procedures)"
+			},
+			{
+				"id": "subroutine",
+				"description": "function and procedure calls"
+			},
+			{
+				"id": "unit",
+				"description": "unit type literals. unit type is record"
+			},
+			{
+				"id": "record",
+				"superType": "struct",
+				"description": "record types"
+			},
+			{
+				"id": "protected",
+				"superType": "class",
+				"description": "protected types"
+			},
+			{
+				"id": "entity",
+				"superType": "interface",
+				"description": "entity and components"
+			},
+			{
+				"id": "package",
+				"description": "package head/body"
+			},
+			{
+				"id": "conditional",
+				"description": "preprocessor directives"
+			},
+			{
+				"id": "conditionalinactive",
+				"description": "inactive code due to directives"
+			}
+		],
+		"semanticTokenScopes": [
+			{
+				"language": "vhdl",
+				"scopes": {
+					"identifier": [
+						"entity.name.identifier.v4p.vhdl"
+					],
+					"type": [
+						"entity.name.type.v4p.vhdl"
+					],
+					"enumeration": [
+						"entity.name.type.enum.v4p.vhdl"
+					],
+					"label": [
+						"entity.name.section.label.v4p.vhdl"
+					],
+					"hierarchy": [
+						"entity.name.section.v4p.vhdl"
+					],
+					"attribute": [
+						"entity.other.attribute-name.v4p.vhdl"
+					],
+					"signal": [
+						"variable.other.signal.v4p.vhdl"
+					],
+					"variable": [
+						"variable.other.v4p.vhdl"
+					],
+					"generic": [
+						"constant.other.generics.v4p.vhdl"
+					],
+					"constant": [
+						"constant.other.v4p.vhdl"
+					],
+					"portsignal": [
+						"variable.parameter.v4p.vhdl"
+					],
+					"portsignalin": [
+						"variable.parameter.in.v4p.vhdl"
+					],
+					"portsignalout": [
+						"variable.parameter.out.v4p.vhdl"
+					],
+					"portsignalinout": [
+						"variable.parameter.inout.v4p.vhdl"
+					],
+					"subroutine": [
+						"entity.name.function.v4p.vhdl"
+					],
+					"unit": [
+						"entity.name.type.unit.v4p.vhdl"
+					],
+					"record": [
+						"entity.name.type.record.v4p.vhdl"
+					],
+					"protected": [
+						"entity.name.type.protected.v4p.vhdl"
+					],
+					"entity": [
+						"entity.name.interface.v4p.vhdl"
+					],
+					"package": [
+						"meta.namespace.v4p.vhdl"
+					],
+					"conditional": [
+						"comment.line.conditional.v4p.vhdl"
+					],
+					"conditionalinactive": [
+						"comment.line.conditionalinactive.v4p.vhdl"
+					]
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode production",
+		"webpack-dev": "webpack --mode development",
+		"test-compile": "tsc -p ./",
+		"test-run": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^10.17.60",
+		"@types/vscode": "^1.68.0",
+		"glob": "^7.1.4",
+		"mocha": "^8.3.2",
+		"ts-loader": "^9.5.2",
+		"tslint": "^5.12.1",
+		"vscode-languageclient": "^8.0.1",
+		"vscode-test": "^1.3.0",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.6.0"
+	},
+	"dependencies": {
+		"typescript": "^4.7.4"
+	},
+	"__metadata": {
+		"installedTimestamp": 1768248694101,
+		"targetPlatform": "undefined",
+		"size": 362225290
+	}
+}

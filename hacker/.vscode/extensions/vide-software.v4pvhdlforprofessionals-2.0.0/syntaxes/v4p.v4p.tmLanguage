@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<!--
+	MFe: Reference for valid "names": https://www.sublimetext.com/docs/3/scope_naming.html
+-->
+
+<dict>
+	<key>scopeName</key>
+	<string>source.v4p.v4p</string>
+	
+	<key>uuid</key>
+	<string>9A25D72C-1478-4362-AC05-82D036597411</string>
+
+	<key>comment</key>
+	<string>Configuration files for V4P by Markus Ferringer (www.vide-software.at)</string>
+
+	<key>fileTypes</key>
+	<array>
+		<string>v4p</string>
+	</array>
+
+	<key>name</key>
+	<string>V4P</string>
+
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#line-comment</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#tokens</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#keywords</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#predefined-constants</string>
+		</dict>
+	</array>
+
+	<key>repository</key>
+	<dict>
+
+		<key>line-comment</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>#.*$\n?</string>
+					<key>name</key>
+					<string>comment.line.v4p.vhdl</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>tokens</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b([\d_]+\.[\d_]+([eE][+\-]?[\d_]+)?)</string>
+					<key>name</key>
+					<string>constant.numeric.float.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b[-+]?[\d_]+</string>
+					<key>name</key>
+					<string>constant.numeric.integer.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(=)</string>
+					<key>name</key>
+					<string>keyword.operator.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\.|\[|\])</string>
+					<key>name</key>
+					<string>punctuation.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(V4p|Settings|Basics|Formatting|HoverInfo|Completion|StutterMode|Indentation|Vhdl|Newlines|Snippets|EndIdentifiers|ErrorChecker|MissingAssociations|SymbolUnused|ParameterHelp)\b</string>
+					<key>name</key>
+					<string>entity.name.type.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(Never|Always|Keep|HorizontalLineWidth|Enabled|Priority|TabWidth|UseTabs|TopLevelEntities|SignalNamePrefix|IgnoreAssert|ShowComments|LogSeverity|LicenseFile|VhdlStandard|StandardLibraryStyle|KeywordStyle|WhenChoices|RecordKeyword|ProtectedKeyword|UseClauses|PortMaps|Declarations|WhenChoices|ReportSeverity|ShowEnums|ShowVendorSymbols|ShowVendorSnippets|ShowUncommon|ShowKeywords|ShowAllOverloads|ResolveTypes|ResolveStdTypes|ShowLocation|ShowLibraries|PortDeclarations|IgnoreInstanceInputsWithDefaultValues|IgnoreInstanceOutputs|AttributesReadValue|IgnoreLoopVariables|Instances|UnitsKeyword|AlignSequentialAssignments|PhysicalLiteral)\b</string>
+					<key>name</key>
+					<string>entity.name.tag.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\(\*\))</string>
+					<key>name</key>
+					<string>invalid.illegal.v4p.vhdl</string>
+				</dict>
+			</array>
+		</dict>
+		
+		<key>keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(external|settings|libraries|excludes|ignores|defines)\b</string>
+					<key>name</key>
+					<string>keyword.control.v4p.vhdl</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>string</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>"[^("")]*"</string>
+					<key>name</key>
+					<string>string.quoted.double.v4p.vhdl</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>predefined-constants</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(?i:True|False|Lower|Upper|AsDefined|Fatal|Error|Warning|Info|Note|Debug|Detail|SignalsOnly|Always|Never|Ignore|Vhdl2008|Vhdl2019)\b</string>
+					<key>name</key>
+					<string>keyword.control.v4p.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i:@default|@inherit)</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.v4p.vhdl</string>
+				</dict>
+			</array>
+		</dict>
+
+	</dict>
+	
+</dict>
+</plist>

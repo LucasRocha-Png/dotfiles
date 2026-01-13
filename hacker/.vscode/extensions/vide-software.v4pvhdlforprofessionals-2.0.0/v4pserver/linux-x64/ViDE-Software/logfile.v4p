@@ -1,0 +1,169 @@
+2026-01-13 08:12:17.0426 [Info]    [Server]            Started V4P at '2026-01-13 08:12:17'
+2026-01-13 08:12:17.4027 [Info]    [Logging]           Forcing Log-Severity to Note.
+2026-01-13 08:12:17.4153 [Note]    [ProjectManagement] Created project '' (default_v4p_project) in workspace
+2026-01-13 08:12:17.4161 [Note]    [LanguageService]   OnProjectAddedCallback(): Added project '' (default_v4p_project) to language-service
+2026-01-13 08:12:17.4167 [Note]    [Server]            Connection() established.
+2026-01-13 08:12:17.4169 [Info]    [Server]            Folder for logfile and std-libs: '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software'
+2026-01-13 08:12:17.4172 [Info]    [Server]            Backuped '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/logfile.v4p' ->'/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/logfile.v4p.bak'
+2026-01-13 08:12:17.4173 [Info]    [Server]            Full Path to Logfile: '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/logfile.v4p'
+2026-01-13 08:12:17.4178 [Info]    [Server]            Version: V2.0.0 (RELEASE 2025-12-18 17:11:43 CE(S)T)
+2026-01-13 08:12:17.4187 [Info]    [Server]            .NET Version: .NET 9.0
+2026-01-13 08:12:17.4196 [Info]    [Server]            Target Platform: 9.0.11
+2026-01-13 08:12:17.4201 [Info]    [Server]            Operating System: Unix 6.18.4.1
+2026-01-13 08:12:17.4203 [Info]    [Server]            Binary Target: Linux / MacOS
+2026-01-13 08:12:17.4256 [Note]    [Server]            RequestTimeoutChecker started.
+2026-01-13 08:12:17.6671 [Info]    [LSPJson]           === Initialize ===
+2026-01-13 08:12:17.6672 [Info]    [LSPJson]           RootUri: /home/salieri/dotfiles
+2026-01-13 08:12:17.6672 [Info]    [LSPJson]           InitializationOptions: -
+2026-01-13 08:12:17.6673 [Info]    [LSPJson]           Client.Capabilities.synchronization: valid
+2026-01-13 08:12:17.6674 [Info]    [LSPJson]           Client.Capabilities.synchronization[dynamicRegistration]: True
+2026-01-13 08:12:17.6674 [Info]    [LSPJson]           Client.Capabilities.synchronization[didSave]: True
+2026-01-13 08:12:17.6674 [Info]    [LSPJson]           Client.Capabilities.synchronization[willSave]: True
+2026-01-13 08:12:17.6675 [Info]    [LSPJson]           Client.Capabilities.synchronization[willSaveWaitUntil]: True
+2026-01-13 08:12:17.6675 [Info]    [LSPJson]           Client.Capabilities.foldingRange: valid
+2026-01-13 08:12:17.6675 [Info]    [LSPJson]           Client.Capabilities.foldingRange[dynamicRegistration]: True
+2026-01-13 08:12:17.6676 [Info]    [LSPJson]           Client.Capabilities.foldingRange[lineFoldingOnly]: True
+2026-01-13 08:12:17.6681 [Info]    [LSPJson]           Client.Capabilities.foldingRange[rangeLimit]: 5000
+2026-01-13 08:12:17.6682 [Info]    [LSPJson]           Client.Capabilities.onTypeFormatting: True
+2026-01-13 08:12:17.6683 [Info]    [LSPJson]           Client.Capabilities.formatting[dynamicRegistration]: True
+2026-01-13 08:12:17.6683 [Info]    [LSPJson]           Client.Capabilities.rangeFormatting[dynamicRegistration]: True
+2026-01-13 08:12:17.6684 [Info]    [LSPJson]           Client.Capabilities.publishDiagnostics[relatedInfo]: True
+2026-01-13 08:12:17.6684 [Info]    [LSPJson]           Client.Capabilities.publishDiagnostics[versionSupport]: False
+2026-01-13 08:12:17.6724 [Info]    [LSPJson]           Client.Capabilities.publishDiagnostics[tagSupport]: Unnecessary|Deprecated
+2026-01-13 08:12:17.6725 [Info]    [LSPJson]           Client.Capabilities.hover[dynamicRegistration]: True
+2026-01-13 08:12:17.6726 [Info]    [LSPJson]           Client.Capabilities.hover[contentFormat]: markdown|plaintext
+2026-01-13 08:12:17.6727 [Info]    [LSPJson]           Client.Capabilities.gotoDeclaration[dynamicRegistration]: True
+2026-01-13 08:12:17.6728 [Info]    [LSPJson]           Client.Capabilities.gotoDeclaration[linkSupport]: True
+2026-01-13 08:12:17.6728 [Info]    [LSPJson]           Client.Capabilities.gotoDefinition[dynamicRegistration]: True
+2026-01-13 08:12:17.6728 [Info]    [LSPJson]           Client.Capabilities.gotoDefinition[linkSupport]: True
+2026-01-13 08:12:17.6729 [Info]    [LSPJson]           Client.Capabilities.gotoTypeDefinition[dynamicRegistration]: True
+2026-01-13 08:12:17.6729 [Info]    [LSPJson]           Client.Capabilities.gotoTypeDefinition[linkSupport]: True
+2026-01-13 08:12:17.6729 [Info]    [LSPJson]           Client.Capabilities.gotoImplementation[dynamicRegistration]: True
+2026-01-13 08:12:17.6729 [Info]    [LSPJson]           Client.Capabilities.gotoImplementation[linkSupport]: True
+2026-01-13 08:12:17.6730 [Info]    [LSPJson]           Client.Capabilities.findReferences[dynamicRegistration]: True
+2026-01-13 08:12:17.6730 [Info]    [LSPJson]           Client.Capabilities.rename[dynamicRegistration]: True
+2026-01-13 08:12:17.6730 [Info]    [LSPJson]           Client.Capabilities.rename[prepareSupport]: True
+2026-01-13 08:12:17.6731 [Info]    [LSPJson]           Client.Capabilities.workspaceEdit[documentChanges]: True
+2026-01-13 08:12:17.6731 [Info]    [LSPJson]           Client.Capabilities.workspaceEdit[resourceOperations]: create | rename | delete
+2026-01-13 08:12:17.6732 [Info]    [LSPJson]           Client.Capabilities.completion[dynamicRegistration]: True
+2026-01-13 08:12:17.6732 [Info]    [LSPJson]           Client.Capabilities.completion[snippetSupport]: True
+2026-01-13 08:12:17.6733 [Info]    [LSPJson]           Client.Capabilities.completion[commitCharactersSupport]: True
+2026-01-13 08:12:17.6733 [Info]    [LSPJson]           Client.Capabilities.completion[documentationFormat]: markdown | plaintext
+2026-01-13 08:12:17.6733 [Info]    [LSPJson]           Client.Capabilities.completion[deprecatedSupport]: True
+2026-01-13 08:12:17.6734 [Info]    [LSPJson]           Client.Capabilities.completion[preselectSupport]: True
+2026-01-13 08:12:17.6749 [Info]    [LSPJson]           Client.Capabilities.completion[tagSupport]: Deprecated
+2026-01-13 08:12:17.6773 [Info]    [LSPJson]           Client.Capabilities.completion[completionItemKind]: Text | Method | Function | Constructor | Field | Variable | Class | Interface | Module | Property | Unit | Value | Enum | Keyword | Snippet | Color | File | Reference | Folder | EnumMember | Constant | Struct | Event | Operator | TypeParameter
+2026-01-13 08:12:17.6775 [Info]    [LSPJson]           Client.Capabilities.completion[contextSupport]: True
+2026-01-13 08:12:17.6776 [Info]    [LSPJson]           Client.Capabilities.executeCommand[dynamicRegistration]: True
+2026-01-13 08:12:17.6776 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[dynamicRegistration]: True
+2026-01-13 08:12:17.6777 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[tokenTypes]: namespace | type | class | enum | interface | struct | typeParameter | parameter | variable | property | enumMember | event | function | method | macro | keyword | modifier | comment | string | number | regexp | operator | decorator
+2026-01-13 08:12:17.6871 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[tokenModifiers]: declaration | definition | readonly | static | deprecated | abstract | async | modification | documentation | defaultLibrary
+2026-01-13 08:12:17.6873 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[augmentsSyntaxTokens]: True
+2026-01-13 08:12:17.6873 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[formats]: relative
+2026-01-13 08:12:17.6874 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[multilineTokenSupport]: False
+2026-01-13 08:12:17.6874 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[overlappingTokenSupport]: False
+2026-01-13 08:12:17.6875 [Info]    [LSPJson]           Client.Capabilities.semanticTokens[refreshSupport]: True
+2026-01-13 08:12:17.6875 [Info]    [LSPJson]           Client.Capabilities.signatureHelp[dynamicRegistration]: True
+2026-01-13 08:12:17.6876 [Info]    [LSPJson]           Client.Capabilities.signatureHelp[documentationFormat]: markdown | plaintext
+2026-01-13 08:12:17.6876 [Info]    [LSPJson]           Client.Capabilities.signatureHelp[labelOffsetSupport]: True
+2026-01-13 08:12:17.6877 [Info]    [LSPJson]           Client.Capabilities.signatureHelp[activeParameterSupport]: True
+2026-01-13 08:12:17.6877 [Info]    [LSPJson]           Client.Capabilities.signatureHelp[contextSupport]: True
+2026-01-13 08:12:17.6877 [Info]    [LSPJson]           Client.Capabilities.fileOperations[didCreate]: True
+2026-01-13 08:12:17.6878 [Info]    [LSPJson]           Client.Capabilities.fileOperations[didRename]: True
+2026-01-13 08:12:17.6878 [Info]    [LSPJson]           Client.Capabilities.fileOperations[didDelete]: True
+2026-01-13 08:12:17.6879 [Info]    [LSPJson]           Client.Capabilities.fileOperations[willCreate]: True
+2026-01-13 08:12:17.6879 [Info]    [LSPJson]           Client.Capabilities.fileOperations[willRename]: True
+2026-01-13 08:12:17.6880 [Info]    [LSPJson]           Client.Capabilities.fileOperations[willDelete]: True
+2026-01-13 08:12:17.6880 [Info]    [LSPJson]           Client.Capabilities.documentSymbols[dynamicRegistration]: True
+2026-01-13 08:12:17.6880 [Info]    [LSPJson]           Client.Capabilities.documentSymbols[hierachicalSupport]: True
+2026-01-13 08:12:17.6896 [Info]    [LSPJson]           Client.Capabilities.documentSymbols[tagSupport]: Deprecated
+2026-01-13 08:12:17.6897 [Info]    [LSPJson]           Client.Capabilities.documentSymbols[labelSupport]: True
+2026-01-13 08:12:17.6927 [Info]    [LSPJson]           Client.Capabilities.documentSymbols[symbolKind]: File | Module | Namespace | Package | Class | Method | Property | Field | Constructor | Enum | Interface | Function | Variable | Constant | String | Number | Boolean | Array | Object | Key | Null | EnumMember | Struct | Event | Operator | TypeParameter
+2026-01-13 08:12:17.6929 [Info]    [LSPJson]           Client.Capabilities.codeAction[dynamicRegistration]: True
+2026-01-13 08:12:17.6930 [Info]    [LSPJson]           Client.Capabilities.codeAction[codeActionLiteralSupport]:  | quickfix | refactor | refactor.extract | refactor.inline | refactor.rewrite | source | source.organizeImports
+2026-01-13 08:12:17.6931 [Info]    [LSPJson]           Client.Capabilities.codeAction[datasupport]: True
+2026-01-13 08:12:17.6931 [Info]    [LSPJson]           Client.Capabilities.codeAction[resolveSupport]: edit
+2026-01-13 08:12:17.6932 [Info]    [LSPJson]           Client.Capabilities.codeAction[honorsChangeAnnotations]: False
+2026-01-13 08:12:17.6932 [Info]    [LSPJson]           Client.Capabilities.workDoneProgress: True
+2026-01-13 08:12:17.6933 [Info]    [LSPJson]           Client.Capabilities.workspacefolders: True
+2026-01-13 08:12:17.6946 [Warning] [LSPJson]             'file:///home/salieri/dotfiles' (Ignored)
+2026-01-13 08:12:17.7373 [Note]    [Server]            UpdateWorkspace('Initialized()')...
+2026-01-13 08:12:17.7701 [Info]    [Server]            Could not find MasterConfig in any location.
+2026-01-13 08:12:17.7703 [Warning] [Server]            No MasterConfig found. This is perfectly fine, but it might make your life easier if there are multiple VHDL-projects.
+2026-01-13 08:12:17.7724 [Info]    [Logging]           Forcing Log-Severity to Note.
+2026-01-13 08:12:17.8062 [Info]    [Server]            Could not find LicenseFile in any location.
+2026-01-13 08:12:17.8080 [Info]    [Licensing]         Switching license to new one... (Included Trial License)
+2026-01-13 08:12:17.8113 [Info]    [Licensing]         License '' of type 'None'
+                                                       License issued for '' at '' (email: '').
+                                                       License issued on '2026-01-12'
+                                                       License is AUTHENTIC and VALID.
+                                                       License is valid until '2026-02-12', node is locked to ''.
+                                                       License contains features: 'All'.
+                                                       License supports products: 'V4p'.
+2026-01-13 08:12:18.3254 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/dut.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3269 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/dut.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3429 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/user.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3431 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/user.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3435 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/common.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3436 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/common.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3440 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/math.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3441 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/demo/math.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3461 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/textio.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3463 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/textio.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3467 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_bit.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3468 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_bit.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3471 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_float_types.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3471 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_float_types.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3485 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/vital_primitives.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3486 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/vital_primitives.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3489 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_textio.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3490 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_textio.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3492 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/env.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3495 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/env.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3498 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/vital_timing.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3499 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/vital_timing.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3501 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_generic_pkg.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3502 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_generic_pkg.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3504 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_pkg.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3505 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/fixed_pkg.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3507 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_std_unsigned.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3508 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_std_unsigned.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3510 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/math_real.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3511 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/math_real.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3514 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/ieee_context.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3515 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/ieee_context.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3518 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_misc.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3518 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_misc.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3520 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/float_pkg.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3521 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/float_pkg.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3523 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_unsigned.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3524 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_unsigned.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3526 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_std.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3527 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_std.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3529 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/float_generic_pkg.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3529 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/float_generic_pkg.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3531 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/math_complex.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3532 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/math_complex.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3537 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_signed.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3538 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_signed.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3541 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_arith.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3542 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_arith.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3544 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_1164.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3545 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/std_logic_1164.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3547 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/standard.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3548 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/standard.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:18.3550 [Note]    [ProjectManagement] Added file '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_bit_unsigned.vhd' with lib '' to project '' (default_v4p_project)
+2026-01-13 08:12:18.3551 [Note]    [LanguageService]   Adding '/home/salieri/dotfiles/hacker/.vscode/extensions/vide-software.v4pvhdlforprofessionals-2.0.0/v4pserver/linux-x64/ViDE-Software/numeric_bit_unsigned.vhd' to project default_v4p_project: ContentType [Vhdl]
+2026-01-13 08:12:19.0446 [Note]    [Server]            UpdateWorkspace('FileExcludesHandler')...
+2026-01-13 08:12:19.0458 [Info]    [Server]            Could not find MasterConfig in any location.
+2026-01-13 08:12:19.0459 [Warning] [Server]            No MasterConfig found. This is perfectly fine, but it might make your life easier if there are multiple VHDL-projects.
+2026-01-13 08:12:19.0460 [Info]    [Logging]           Forcing Log-Severity to Note.
+2026-01-13 08:12:19.0475 [Info]    [Server]            Could not find LicenseFile in any location.
+2026-01-13 08:12:19.0477 [Info]    [Licensing]         Switching license to new one... (Included Trial License)
+2026-01-13 08:12:19.0478 [Info]    [Licensing]         License '' of type 'None'
+                                                       License issued for '' at '' (email: '').
+                                                       License issued on '2026-01-12'
+                                                       License is AUTHENTIC and VALID.
+                                                       License is valid until '2026-02-12', node is locked to ''.
+                                                       License contains features: 'All'.
+                                                       License supports products: 'V4p'.
