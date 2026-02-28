@@ -1,2 +1,4 @@
-.vscode/*
-!.vscode/extensions/rocha-color
+/chill/.vscode/*
+/hacker/.vscode/*
+!/chill/.vscode/extensions/rocha-color
+!/hacker/.vscode/extensions/rocha-color

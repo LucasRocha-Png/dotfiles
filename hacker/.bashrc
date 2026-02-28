@@ -12,3 +12,5 @@ PS1='[\u@\h \W]\$ '
 
 export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
 export TERMINAL=kitty
+
+alias microphone='cd ~/Applications/audiosource && ./audiosource run'

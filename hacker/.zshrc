@@ -110,8 +110,9 @@ alias ls="exa"
 alias ll="exa -alh"
 alias tree="exa --tree"
 
-alias calendar="gnome-calendar"
+alias calendar="evolution"
 alias calculator="qalculate-gtk"
+alias microphone="cd ~/Applications/audiosource && ./audiosource run"
 
 export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
 export TERMINAL=kitty
