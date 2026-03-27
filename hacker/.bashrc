@@ -14,3 +14,8 @@ export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quar
 export TERMINAL=kitty
 
 alias microphone='cd ~/Applications/audiosource && ./audiosource run'
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/salieri/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -116,3 +116,8 @@ alias microphone="cd ~/Applications/audiosource && ./audiosource run"
 
 export QSYS_ROOTDIR="/home/salieri/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
 export TERMINAL=kitty
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/salieri/.lmstudio/bin"
+# End of LM Studio CLI section
+
