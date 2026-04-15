@@ -21,6 +21,7 @@ for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Gcolor3"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
+for_window [class="Org.xfce.mousepad"] floating enable
 
 # Configure some 
 exec dbus-launch --sh-syntax i3
@@ -30,7 +31,7 @@ exec_always setxkbmap br abnt2
 
 # Print fix
 exec --no-startup-id mkdir -p ~/Pictures/Screenshots
-bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga'
+bindsym Print exec --no-startup-id sh -c 'maim --select | tee ~/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png -i && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga'
 
 
 # Apps keybinds
@@ -39,7 +40,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+p exec --no-startup-id zapzap
 bindsym $mod+c exec --no-startup-id qalculate-gtk
 bindsym $mod+g exec --no-startup-id firefox --new-window https://gemini.google.com/app
-bindsym $mod+o exec --no-startup-id gcolor3
+bindsym $mod+o exec --no-startup-id env LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 kitty --title octave_term octave
+for_window [title="octave_term"] floating enable, resize set 450 300, move position center
 
 # Brigness fix
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
