@@ -19,6 +19,7 @@ font pango:Terminess Nerd Font Mono 12
 # xprop WM_CLASS
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Gcolor3"] floating enable
+for_window [class="kruler"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
 for_window [class="Org.xfce.mousepad"] floating enable
