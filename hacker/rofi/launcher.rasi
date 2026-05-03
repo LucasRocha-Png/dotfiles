@@ -50,13 +50,13 @@ window {
     fullscreen:                  false;
     width:                       500px;
     x-offset:                    0px;
-    y-offset:                    20px;
+    y-offset:                    25px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     8px;
-    border:                      0px solid;
+    border:                      1px solid;
     border-radius:               0px;
     border-color:                @border-colour;
     cursor:                      "default";
