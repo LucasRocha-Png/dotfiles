@@ -121,3 +121,23 @@ export TERMINAL=kitty
 export PATH="$PATH:/home/salieri/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+
+
+# Fortune 
+FORTUNE_DATE_FILE="$HOME/.cache/daily_fortune_date"
+FORTUNE_MSG_FILE="$HOME/.cache/daily_fortune_msg"
+
+TODAY=$(date +%Y-%m-%d)
+if [ -f "$FORTUNE_DATE_FILE" ]; then
+    SAVED_DATE=$(cat "$FORTUNE_DATE_FILE")
+else
+    SAVED_DATE=""
+fi
+
+if [ "$TODAY" != "$SAVED_DATE" ]; then
+    fortune -s work wisdom science love people education platitudes fortunes startrek magic | sed -e '/^[[:space:]]*--/d' -e '/stardate/Id' > "$FORTUNE_MSG_FILE"
+    echo "$TODAY" > "$FORTUNE_DATE_FILE"
+fi
+
+cat "$FORTUNE_MSG_FILE"

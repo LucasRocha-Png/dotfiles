@@ -124,7 +124,8 @@ if [[ "$status" != "Playing" ]]; then
 fi
 
 # Print Output 
-display_text="<span weight='light' size='small' alpha='50%'>${player_display_name} ${player_status}</span>\n\n${song_title}\n<span size='small' style='italic' alpha='65%'>${song_artist}</span>"
+# display_text="<span weight='light' size='small' alpha='50%'>${player_display_name} ${player_status}</span>\n\n${song_title}\n<span size='small' style='italic' alpha='65%'>${song_artist}</span>"
+display_text="<span weight='light' size='small' alpha='65%'>${player_display_name} ${player_status}</span>\n${song_title}\n<span size='small' style='italic' alpha='65%'>${song_artist}</span>"
 
 # --- Launch Rofi ---
 selected_option=$(echo -e "$pre\n$toogle\n$next" | rofi -dmenu \
@@ -135,14 +136,14 @@ selected_option=$(echo -e "$pre\n$toogle\n$next" | rofi -dmenu \
 case "$selected_option" in
     "$pre") 
         playerctl -p "$active_player" previous 
-        notify-send "$player_display_name Skipped" "\n<big>$song_title</big>\n$song_artist" --icon="$art_file"
+        notify-send "$player_display_name Skipped" "\n$song_title - $song_artist" --icon="$art_file"
         ;;
     "$toogle") 
         playerctl -p "$active_player" play-pause 
-        notify-send "$player_display_name $notify_status" "\n<big>$song_title</big>\n$song_artist" --icon="$art_file"
+        notify-send "$player_display_name $notify_status" "\n$song_title - $song_artist" --icon="$art_file"
         ;;
     "$next")
         playerctl -p "$active_player" next      
-        notify-send "$player_display_name Skipped" "\n<big>$song_title</big>\n$song_artist" --icon="$art_file"
+        notify-send "$player_display_name Skipped" "\n$song_title  - $song_artist" --icon="$art_file"
         ;;
 esac

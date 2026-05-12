@@ -1,0 +1,23 @@
+options.color_current_cell = 'black on green'
+options.color_current_row = 'green'
+options.color_current_col = 'green'
+options.color_menu = 'green on black'
+options.color_menu_active = 'black on green'
+
+options.color_default = 'white'
+options.color_default_hdr = 'green'
+options.color_key_col = 'blue'
+options.color_column_sep = 237
+
+options.color_menu = 'green on black'
+options.color_menu_active = 'black on green'
+options.color_menu_help = 'green on black'
+
+options.color_status = 'green on black'
+options.color_keystrokes = 'green on black'
+options.color_sidebar = 'green on black'
+options.color_active_status = 'green on black'
+options.color_edit_cell = 'black on green'
+options.color_edit_unfocused = 'black on green'
+options.color_error = 'red'
+options.color_warning = 'yellow'

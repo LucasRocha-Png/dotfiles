@@ -53,7 +53,7 @@ shopt -u dotglob
 
 # --- ARQUIVOS SOLTOS ---
 
-for file_name in ".bashrc" ".zshrc" ".xprofile" ".Xresources"; do
+for file_name in ".bashrc" ".zshrc" ".xprofile" ".Xresources" ".visidatarc"; do
     file="$DOTFILES/$file_name"
     target="$HOME/$file_name"
 

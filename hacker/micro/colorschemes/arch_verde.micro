@@ -1,0 +1,66 @@
+# ==========================================
+# TEMA: lucas_rocha-color-theme (Portado)
+# ==========================================
+
+# --- FUNDO E TEXTO PADRÃO ---
+# editor.background: #000000 | editor.foreground: #dddddd
+color-link default "#dddddd,#000000"
+
+# --- INTERFACE DO EDITOR ---
+# statusBar.foreground: #19cb00 | statusBar.background: #000000
+color-link statusline "#19cb00,#000000"
+
+# tab.inactiveForeground: #19cb00 | tab.inactiveBackground: #000000
+color-link tabbar "#19cb00,#000000"
+
+# editorLineNumber.foreground: #dddddd
+color-link line-number "#dddddd,#000000"
+
+# editorLineNumber.activeForeground: #0d73cc
+color-link current-line-number "#0d73cc,#000000"
+
+# editor.selectionBackground: #fffacd (Ajustado para texto preto no fundo amarelo para leitura)
+color-link selection "#000000,#fffacd"
+
+# editor.lineHighlightBackground: #fffacd1f (Convertido para um cinza muito escuro/amarelado)
+color-link cursor-line "#1e1e18,default"
+
+# Margem e caracteres invisíveis
+color-link color-column "#19cb00"
+color-link indent-char "#767676"
+
+# --- SINTAXE E CÓDIGO (Token Colors) ---
+# scope: comment -> #767676
+color-link comment "#767676"
+
+# scope: variable / identifier -> #0dcdcd (Ciano)
+color-link identifier "#0dcdcd"
+
+# scope: constant.numeric / rgb-value -> #19cb00 (Verde)
+color-link constant "#19cb00"
+
+# scope: string -> #cecb00 (Amarelo)
+color-link constant.string "#cecb00"
+
+# scope: keyword / storage / control -> #0d73cc (Azul)
+color-link statement "#0d73cc"
+
+# scope: keyword.operator -> #dddddd (Branco/Cinza Claro)
+color-link symbol "#dddddd"
+
+# scope: entity.name.tag / preprocessor -> #1a8fff (Azul Brilhante)
+color-link preproc "#1a8fff"
+
+# scope: entity.name.type / support.class -> #0d73cc (Azul)
+color-link type "#0d73cc"
+
+# scope: constant.regexp / keyword.control -> #cb1ed1 (Magenta)
+color-link special "#cb1ed1"
+
+# --- ERROS E AVISOS ---
+# editorError.foreground: #cc0403
+color-link error "#cc0403"
+color-link error-message "#cc0403,#000000"
+
+# editorWarning.foreground: #cecb00
+color-link todo "bold #cecb00"

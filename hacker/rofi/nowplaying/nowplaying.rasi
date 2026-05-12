@@ -14,8 +14,8 @@ window {
     location:                    northeast;
     anchor:                      northeast;
     fullscreen:                  false;
-    width:                       500px;
-    height:                      350px;
+    width:                       400px;
+    height:                      250px;
     x-offset:                    0px;
     y-offset:                    25px;
 
@@ -31,14 +31,14 @@ window {
 
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
+    spacing:                     10px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "top-message", "middle-wrapper", "listview" ];
 }
 
 top-message {
-    enabled:                     true;
+    enabled:                     false;
     padding:                     0px;
     background-color:            @background;
     children:                    [ "textbox-msg" ];
