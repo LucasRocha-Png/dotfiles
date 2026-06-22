@@ -70,9 +70,9 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git sudo extract zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh 
 
 # User configuration
 
@@ -136,7 +136,7 @@ else
 fi
 
 if [ "$TODAY" != "$SAVED_DATE" ]; then
-    fortune -s work wisdom science love people education platitudes fortunes startrek magic | sed -e '/^[[:space:]]*--/d' -e '/stardate/Id' > "$FORTUNE_MSG_FILE"
+    fortune -s work wisdom science love people education fortunes startrek magic | sed -e '/^[[:space:]]*--/d' -e '/stardate/Id' > "$FORTUNE_MSG_FILE"
     echo "$TODAY" > "$FORTUNE_DATE_FILE"
 fi
 

@@ -23,6 +23,9 @@ for_window [class="kruler"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
 for_window [class="Org.xfce.mousepad"] floating enable
+for_window [class="Org.xfce.mousepad"] floating enable
+for_window [class="Pavucontrol"] floating enable
+
 
 # Configure some 
 exec dbus-launch --sh-syntax i3
