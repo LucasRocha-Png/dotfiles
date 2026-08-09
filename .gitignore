@@ -1,8 +1,8 @@
 /chill/.vscode/*
-/hacker/.vscode/*
+/.vscode/*
 !/chill/.vscode/extensions/
-!/hacker/.vscode/extensions/
+!/.vscode/extensions/
 /chill/.vscode/extensions/*
-/hacker/.vscode/extensions/*
+/.vscode/extensions/*
 !/chill/.vscode/extensions/rocha-color/
-!/hacker/.vscode/extensions/rocha-color/
+!/.vscode/extensions/rocha-color/
