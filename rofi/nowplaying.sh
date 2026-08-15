@@ -2,6 +2,7 @@
 
 #####################################
 ## author @Harsh-bin Github #########
+## modified by antigravity   #########
 #####################################
 
 # --- Configuration ---
@@ -13,7 +14,6 @@ cache_file="$HOME/.config/rofi/nowplaying/song_title.cache"
 # --- Functions ---
 
 # Determine active player
-
 players_list=$(playerctl -l 2>/dev/null)
 active_player=""
 active_player_priority=0 
@@ -23,12 +23,6 @@ if [ -z "$player" ]; then continue; fi
 
 status=$(playerctl -p "$player" status 2>/dev/null | tr '[:upper:]' '[:lower:]')
 title=$(playerctl -p "$player" metadata title 2>/dev/null)
-
-# Priority Levels:
-# 3 = Playing
-# 2 = Paused
-# 1 = Stopped (but has media/title)
-# 0 = Ghost / No media like chromium based browsers
 
 current_priority=0
 
@@ -58,21 +52,31 @@ fi
 # Fetch Data 
 song_title="Nothing Playing"
 song_artist="Unknown"
+song_album=""
 player_display_name=""
+progress_str=""
 
 # Function to escape special characters 
 escape_characters() {
     echo "$1" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
-}
-url_decode() {
-    local url_encoded="${1//+/ }"
-    printf '%b' "${url_encoded//%/\\x}"
 }
 
 if [[ -n "$active_player" ]]; then
     # Retrieve metadata 
     raw_title=$(playerctl -p "$active_player" metadata title 2>/dev/null)
     raw_artist=$(playerctl -p "$active_player" metadata artist 2>/dev/null)
+    raw_album=$(playerctl -p "$active_player" metadata xesam:album 2>/dev/null)
+    
+    # Progress Calculation
+    position=$(playerctl -p "$active_player" position 2>/dev/null)
+    length=$(playerctl -p "$active_player" metadata mpris:length 2>/dev/null)
+    if [[ -n "$position" && -n "$length" && "$length" -gt 0 ]]; then
+        progress_str=$(awk -v pos="$position" -v len="$length" 'BEGIN {
+            pos_s = pos;
+            len_s = len / 1000000;
+            printf "[ %02d:%02d / %02d:%02d ]", pos_s/60, pos_s%60, len_s/60, len_s%60
+        }')
+    fi
     
     # Escape special characters 
     clean_name="${active_player%%.*}" 
@@ -80,6 +84,7 @@ if [[ -n "$active_player" ]]; then
     player_display_name=$(escape_characters "$clean_name")
     song_title=$(escape_characters "$raw_title")
     song_artist=$(escape_characters "$raw_artist")
+    song_album=$(escape_characters "$raw_album")
 
     # Handle album_art_url output
     cached_title=""
@@ -90,6 +95,17 @@ if [[ -n "$active_player" ]]; then
         echo "$raw_title" > "$cache_file"
 
         album_art_url=$(playerctl -p "$active_player" metadata mpris:artUrl 2>/dev/null)
+        track_url=$(playerctl -p "$active_player" metadata xesam:url 2>/dev/null)
+
+        if [[ -z "$album_art_url" && -n "$track_url" ]]; then
+            if [[ "$track_url" =~ youtube\.com/watch\?v=([a-zA-Z0-9_-]+) ]]; then
+                yt_id="${BASH_REMATCH[1]}"
+                album_art_url="https://img.youtube.com/vi/${yt_id}/mqdefault.jpg"
+            elif [[ "$track_url" =~ youtu\.be/([a-zA-Z0-9_-]+) ]]; then
+                yt_id="${BASH_REMATCH[1]}"
+                album_art_url="https://img.youtube.com/vi/${yt_id}/mqdefault.jpg"
+            fi
+        fi
 
         if [[ -z "$album_art_url" ]]; then
             # Case 0: No art URL found -> use fallback art file
@@ -101,11 +117,16 @@ if [[ -n "$active_player" ]]; then
         elif [[ "$album_art_url" =~ ^file:// ]]; then
             # Case 2: Standard URL (file://) for browsers   
             raw_path="${album_art_url#file://}"
-            decoded_path="$(url_decode "$raw_path")"          
-            cp "$decoded_path" "$art_file"        
-        elif [[ "$album_art_url" =~ ^https:// ]]; then
-            # Case 3: Web URL
-            curl -s "$album_art_url" --output "$art_file"
+            # Use Python for reliable URL decoding
+            decoded_path=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_path" 2>/dev/null)
+            if [[ -f "$decoded_path" ]]; then
+                cp "$decoded_path" "$art_file"
+            else
+                cp "$fallback_art_file" "$art_file" 2>/dev/null
+            fi
+        elif [[ "$album_art_url" =~ ^https?:// ]]; then
+            # Case 3: Web URL (now supporting http and following redirects)
+            curl -sL "$album_art_url" --output "$art_file"
         fi
     fi
 fi
@@ -123,9 +144,19 @@ if [[ "$status" != "Playing" ]]; then
     notify_status="Playing"    
 fi
 
-# Print Output 
-# display_text="<span weight='light' size='small' alpha='50%'>${player_display_name} ${player_status}</span>\n\n${song_title}\n<span size='small' style='italic' alpha='65%'>${song_artist}</span>"
-display_text="<span weight='light' size='small' alpha='65%'>${player_display_name} ${player_status}</span>\n${song_title}\n<span size='small' style='italic' alpha='65%'>${song_artist}</span>"
+# Build Pango formatted display text
+display_text="<span weight='bold' size='large'>${song_title}</span>\n"
+display_text+="<span size='small' alpha='80%'>${song_artist}</span>"
+
+if [[ -n "$song_album" && "$song_album" != "Unknown" ]]; then
+    display_text+="\n<span size='x-small' style='italic' alpha='60%'>${song_album}</span>"
+fi
+
+if [[ -n "$progress_str" ]]; then
+    display_text+="\n<span size='x-small' alpha='50%'>${progress_str}</span>"
+fi
+
+display_text+="\n\n<span size='x-small' alpha='50%'>${player_display_name} ${player_status}</span>"
 
 # --- Launch Rofi ---
 selected_option=$(echo -e "$pre\n$toogle\n$next" | rofi -dmenu \
