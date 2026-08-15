@@ -14,7 +14,7 @@ client.focused          #19cb00 #19cb00 #000000 #19cb00 #19cb00
 client.focused_inactive #000000 #000000 #19cb00 #333333 #000000
 client.unfocused        #000000 #000000 #19cb00 #222222 #000000
 client.urgent           #cc0403 #cc0403 #19cb00 #cc0403 #cc04031
-font pango:Terminess Nerd Font Mono 12
+font pango:Terminus
 
 # xprop WM_CLASS
 for_window [class="Qalculate-gtk"] floating enable

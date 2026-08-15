@@ -6,7 +6,7 @@
     gap_size = 2
     max_icon_size = 32
     min_icon_size = 32
-    font = "Terminess Nerd Font Mono 12"
+    font = "Terminus"
     enable_recursive_icon_lookup = true
     corner_radius = 0
     background = "#000000"

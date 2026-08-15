@@ -3,7 +3,7 @@
 configuration {
 	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               "🌐 All";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
@@ -48,7 +48,7 @@ window {
     location:                    northwest;
     anchor:                      northwest;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    25px;
 
@@ -74,7 +74,18 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @border-colour;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+    orientation:                 horizontal;
+    children:                    [ "left-box", "mode-switcher" ];
+}
+
+left-box {
+    expand:                      true;
+    orientation:                 vertical;
+    spacing:                     10px;
+    background-color:            transparent;
+    border:                      0px solid;
+    border-color:                transparent;
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -230,6 +241,8 @@ element-text {
 /*****----- Mode Switcher -----*****/
 mode-switcher{
     enabled:                     true;
+    orientation:                 vertical;
+    width:                       140px;
     spacing:                     5px;
     margin:                      0px;
     padding:                     0px;
@@ -240,7 +253,8 @@ mode-switcher{
     text-color:                  @foreground-colour;
 }
 button {
-    padding:                     5px;
+    padding:                     5px 5px 5px 10px;
+    horizontal-align:            0.0;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
